@@ -1,0 +1,104 @@
+.features-section {
+  @extend %wrapper-center;
+  padding-top: 94px;
+}
+
+.features-container {
+  display: block;
+  @extend %wrapper-center;
+  justify-content: center;
+  width: 1200px;
+}
+
+.features {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  max-width: 1170px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: $grey-text;
+}
+
+.feature {
+  display: inline-block;
+
+  &:not(:first-child) {
+  margin-left: 30px;
+  }
+
+  &__icon {
+    display: flex;
+    height: 120px;
+    background-color: $button-bg-non-active;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--icon {
+    width: 70px;
+    height: 70px;
+  }
+  &__title {
+    @extend %title3; 
+  }
+
+  &__item {
+    list-style: none;
+    min-width: 270px;
+    margin: 0px;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+  }
+
+  &__item :not(:first-child) {
+    margin-left: 30px;
+  }
+}
+
+/* .icon-antenna::before {
+  display: block;
+  height: 120px;
+  content: "";
+  background-color: $non-active;
+  background-image: url("../images/svg/antenna.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-clock::before {
+  display: block;
+  height: 120px;
+  content: "";
+  background-color: $non-active;
+  background-image: url("../images/svg/clock.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-diagram::before {
+  display: block;
+  height: 120px;
+  content: "";
+  background-color: $non-active;
+  background-image: url("../images/svg/diagram.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+ .icon-astronaut::before {
+  display: block;
+  height: 120px;
+  content: "";
+  background-color: $non-active;
+  background-image: url("../images/svg/astronaut.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+

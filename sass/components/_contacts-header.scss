@@ -1,0 +1,86 @@
+.contacts-container {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width:768px) {
+    display: none;
+  }
+  @media screen and (min-width:768px) and (max-width:1200px) {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+  }
+}
+
+.contacts-header {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.contacts__list-item {
+  margin-left: 30px;
+  color: $grey-text;
+  justify-content: space-between;
+  align-items: center;
+
+  @include transition (color);
+
+  @media screen and (min-width:768px) {
+  margin-left: 0px;
+  }
+  @media screen and (min-width:768px) {
+  &:first-child {
+    margin-bottom: 10px;
+  }
+
+  & :hover,
+  & :focus {
+  color: $accentColor;
+  outline: none;
+  fill: $accentColor;
+  }
+}
+
+.contacts-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: currentColor;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  @include transition (color);
+
+  & :hover,
+  &:focus {
+    color: $accentColor;
+  }
+}
+
+}
+.contacts-icon {
+  display: flex;
+  flex-direction: row;
+  color: $grey-text;
+  margin: 0px;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
+}

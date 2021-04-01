@@ -1,0 +1,25 @@
+.logo-main {
+  display: block;
+  font-family: 'Raleway', sans-serif;
+  color: $accentColor;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 31px;
+  letter-spacing: 0.03em;
+  @extend %link;
+}
+
+.logo-accent {
+  @extend %link;
+  padding-right: 93px;
+  color: $black-logo;
+
+  @media screen and (min-width:768px) {
+    padding-right: 88px;
+  }
+
+  & .footer {
+  color: $whiteColor;
+  padding: 0px;
+}
+}
