@@ -5,9 +5,8 @@
 
 .features-container {
   display: block;
-  @extend %wrapper-center;
   justify-content: center;
-  width: 1200px;
+  max-width: 1200px;
 }
 
 .features {
@@ -21,15 +20,33 @@
   padding: 0;
   margin: 0;
   color: $grey-text;
+
+  @media screen and (max-width:767px) {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
 }
 
 .feature {
   display: inline-block;
 
   &:not(:first-child) {
-  margin-left: 30px;
+    margin-left: 30px;
+
+    @media screen and (max-width:767px) {
+      margin-left: 0px;
+    }
   }
 
+  @media screen and (max-width:767px) {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+  
   &__icon {
     display: flex;
     height: 120px;

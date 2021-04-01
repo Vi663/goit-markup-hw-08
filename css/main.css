@@ -63,7 +63,7 @@ body {
   color: #ffffff;
 }
 
-.features-section, .features-container, .expertise, .team-wrapper, .partners, .portfolio-wrapper {
+.features-section, .expertise, .team-wrapper, .partners, .portfolio-wrapper {
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
@@ -739,7 +739,7 @@ Correct the inability to style clickable types in iOS and Safari.
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 1200px;
+  max-width: 1200px;
 }
 
 .features {
@@ -765,12 +765,46 @@ Correct the inability to style clickable types in iOS and Safari.
   color: #757575;
 }
 
+@media screen and (max-width: 767px) {
+  .features {
+    display: block;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+}
+
 .feature {
   display: inline-block;
 }
 
 .feature:not(:first-child) {
   margin-left: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .feature:not(:first-child) {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .feature {
+    display: inline-block;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
 }
 
 .feature__icon {
@@ -1492,8 +1526,8 @@ Correct the inability to style clickable types in iOS and Safari.
   -webkit-transform: translate(-50%, -50%) scale(1);
           transform: translate(-50%, -50%) scale(1);
   padding: 40px;
-  width: 528px;
-  height: 581px;
+  max-width: 528px;
+  max-height: 581px;
   background-color: #ffffff;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -1506,6 +1540,24 @@ Correct the inability to style clickable types in iOS and Safari.
           transition-duration: 250ms;
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (max-width: 479px) {
+  .modal {
+    max-width: 450px;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .modal {
+    width: 450px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 528px;
+  }
 }
 
 .modal__btn {
@@ -1589,6 +1641,15 @@ Correct the inability to style clickable types in iOS and Safari.
   color: #212121;
   margin: 0;
   padding-bottom: 12px;
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .form__header {
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
 }
 
 .form {
@@ -1717,7 +1778,7 @@ Correct the inability to style clickable types in iOS and Safari.
 
 .form__textarea {
   resize: none;
-  height: 120px;
+  max-height: 120px;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -1823,6 +1884,31 @@ Correct the inability to style clickable types in iOS and Safari.
   letter-spacing: 0.03em;
   color: #757575;
   padding-left: 16px;
+}
+
+@media screen and (max-width: 480px) {
+  .check-box__label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .check-box__label {
+    font-size: 12px;
+    line-height: 14px;
+  }
 }
 
 .footer {

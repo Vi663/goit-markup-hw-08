@@ -26,12 +26,24 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   padding: 40px;
-  width: 528px;
-  height: 581px;
+  max-width: 528px;
+  max-height: 581px;
   background-color: $whiteColor;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   @include transition (transform, background-color);
+
+  @media screen and (max-width:479px) {
+    max-width: 450px;
+  }
+
+  @media screen and (min-width:480px) and (max-width:768px) {
+    width: 450px;
+  }
+
+  @media screen and (min-width:768px) {
+    width: 528px;
+  }
 
     &__btn {
     @extend %button;
@@ -92,6 +104,13 @@
   color: $black-text;
   margin: 0;
   padding-bottom: 12px;
+
+  @media screen and (min-width:480px) and (max-width:768px) {
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
 }
 
 .form {
@@ -175,7 +194,7 @@
 
   &__textarea {
     resize: none;
-    height: 120px;
+    max-height: 120px;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -210,13 +229,6 @@
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: $timing-function;
-
-  // &:hover {
-  //   color: $accentColor;
-  //   fill: currentColor;
-  //   background-size: contain;
-  //   background-repeat: no-repeat;
-  // }
 }
 
 .check-box__input {
@@ -268,6 +280,18 @@
     letter-spacing: 0.03em;
     color: $grey-text;
     padding-left: 16px;
+
+    @media screen and (max-width:480px) {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+    }
+
+    @media screen and (max-width:768px) {
+      font-size: 12px;
+      line-height: 14px;
+    }
   }
 }
 
