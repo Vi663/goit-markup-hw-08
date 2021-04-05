@@ -42,28 +42,26 @@
     color: $whiteColor;
   }
 
-  .btn:active {
+  &__btn:active {
     transform: translateY(-1px);
   }
-}
+  &__btn {
+    @extend %button;
+    transition-property: color, transform, scale;
+    transition-duration: 250ms;
+    transition-timing-function: $timing-function;
+  }
 
-.btn {
-  @extend %button;
-  transition-property: color, transform, scale;
-  transition-duration: 250ms;
-  transition-timing-function: $timing-function;
-}
+  &__btn:hover,
+  &__btn:focus {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
 
-.btn:hover,
-.btn:focus {
-  transform: scale(1.2);
-  cursor: pointer;
+  &__btn:hover,
+  &__btn:focus {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
 }
-
-.btn:hover,
-.btn:focus {
-  transform: scale(1.2);
-  cursor: pointer;
-}
-
 
