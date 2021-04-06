@@ -1,11 +1,12 @@
-.portfolio-wrapper {
+.portfolio__wrapper {
   flex-wrap: wrap;
   width: 1200px;
   padding-top: 94px;
   padding-bottom: 94px;
   @extend %wrapper-center;
 }
-.button__list {
+
+.filters__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -18,7 +19,7 @@
   padding-bottom: 50px;
 }
 
-.button__list__item {
+.filters__item {
   font-family: inherit;
   flex-direction: row;
   flex-wrap: wrap;
@@ -33,7 +34,7 @@
   }
 }
 
-.portfolio-button {
+.filters__button {
    font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 16px;

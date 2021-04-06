@@ -1,4 +1,4 @@
-.social-media {
+.social__item {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,61 +12,6 @@
   border-radius: 50px;
 
   @include transition (color, opacity);
-
-  &-container {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  padding-bottom: 30px;
-  color: $non-active;
-  justify-content: center;
-  }
-  
-  &__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: contain;
-    width: 40px;
-    height: 40px;
-    border-radius: 50px;
-    background-color: rgba(255, 255, 255, 0.1);
-
-    @include transition (background-color);
-  }
-
-  &__link:hover,
-  &__link :focus {
-    color: $whiteColor;
-    fill: $whiteColor;
-    background-color: $accentColor;
-    
-    /* opacity: 0.7; */
-
-    /* animation-name: changeBgColor;
-    animation-duration: 2500ms;
-    animation-timing-function: $timing-function;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: forwards; */
-  }
-
-  /* @keyframes changeBgColor {
-    0% {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    100% {
-      background-color: $accentColor;
-    }
-  } */
-
-  &__item {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-  }
 
   &:not(:last-child) {
     margin-right: 10px;
@@ -83,3 +28,57 @@
   }
 }
 
+.social__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 30px;
+  color: $non-active;
+  justify-content: center;
+}
+  
+.social__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+
+  @include transition (background-color);
+}
+
+.social__link:hover,
+.social__link :focus {
+  color: $whiteColor;
+  fill: $whiteColor;
+  background-color: $accentColor;
+    
+    /* opacity: 0.7; */
+
+    /* animation-name: changeBgColor;
+    animation-duration: 2500ms;
+    animation-timing-function: $timing-function;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards; */
+}
+
+  /* @keyframes changeBgColor {
+    0% {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+      background-color: $accentColor;
+    }
+  } */
+
+.social__logo {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}

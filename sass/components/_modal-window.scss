@@ -45,12 +45,22 @@
     width: 528px;
   }
 
-    &__btn {
+  &__btn {
     @extend %button;
     margin-top: 30px;
-    }
 
-    &__button {
+    transition-property: color, transform, scale;
+    transition-duration: 250ms;
+    transition-timing-function: $timing-function;
+  }
+
+  &__btn:hover,
+  &__btn:focus {
+    transform: scale(0.9);
+    cursor: pointer;
+  }
+
+  &__button {
     position: absolute;
     top: 8px;
     right: 8px;
@@ -70,56 +80,56 @@
     @include transition (color, transform, scale);
   }
 
-    &__button:hover,
-    &__button:focus {
+  &__button:hover,
+  &__button:focus {
     transform: scale(1.2);
     cursor: pointer;
     fill: $accentColor;
     color: $accentColor;
   }
-}
 
-.button__icon {
-  width: 30px;
-  height: 30px;
-}
+  &__icon--close {
+    width: 30px;
+    height: 30px;
+  }
 
-.form__container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-}
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
 
-.form__header {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 23px;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: $black-text;
-  margin: 0;
-  padding-bottom: 12px;
-
-  @media screen and (min-width:480px) and (max-width:768px) {
+  &__header {
+    font-style: normal;
+    font-weight: bold;
     font-size: 20px;
-    line-height: 30px;
+    line-height: 23px;
     text-align: center;
     letter-spacing: 0.03em;
-  }
-}
+    color: $black-text;
+    margin: 0;
+    padding-bottom: 12px;
 
-.form {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 20px;
+    @media screen and (min-width:480px) and (max-width:768px) {
+      font-size: 20px;
+      line-height: 30px;
+      text-align: center;
+      letter-spacing: 0.03em;
+    }
+  }
+
+  &__form {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
 
   &__field {
     position: relative;
@@ -217,6 +227,19 @@
   }
 }
 
+  // &__label--check-box {
+  //   position: relative;
+  //   display: flex;
+  //   align-items: start;
+  //   justify-content: center;
+  //   font-style: normal;
+  //   font-weight: normal;
+  //   font-size: 14px;
+  //   line-height: 24px;
+  //   letter-spacing: 0.03em;
+  //   color: $grey-text;
+  //   padding-left: 16px;
+
 .check-box__container {
   position: relative;
   display: flex;
@@ -229,6 +252,13 @@
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: $timing-function;
+
+  // &:hover {
+  //   color: $accentColor;
+  //   fill: currentColor;
+  //   background-size: contain;
+  //   background-repeat: no-repeat;
+  // }
 }
 
 .check-box__input {
@@ -250,6 +280,7 @@
     transition-timing-function: $timing-function;
   }
 }
+
 .check-box {
   position: absolute;
   top: 50%;
@@ -268,6 +299,7 @@
     color: $accentColor;
     padding-left: 4px;
   }
+
   &__label {
     position: relative;
     display: flex;
@@ -294,7 +326,3 @@
     }
   }
 }
-
-
-
-

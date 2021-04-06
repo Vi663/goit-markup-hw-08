@@ -1,8 +1,8 @@
-.card-container {
+.projects {
   margin: -15px;
   width: 1200px;
 
-    &__card-list {
+  &__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -11,25 +11,26 @@
     padding-inline-start: 0px;
     margin: 0px;
   }
-}
 
-.card {
-  list-style: none;
-  background-color: $whiteColor;
-  border: 1px solid #EEEEEE;
-  margin: 15px;
-  width: 370px;
-  max-height: 404px;
-  max-width: 370px;
-  border-radius: 0px;
+  &__item {
+    list-style: none;
+    background-color: $whiteColor;
+    border: 1px solid #EEEEEE;
+    margin: 15px;
+    width: 370px;
+    max-height: 404px;
+    max-width: 370px;
+    border-radius: 0px;
 
     &:hover,
     & :focus {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-    cursor: pointer;
-    outline: none;
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+      cursor: pointer;
+      outline: none;
+    }
   }
-  &__overlay {
+
+  &__link {
     position: relative;
     display: block;
     width: 100%;
@@ -37,40 +38,32 @@
     overflow: hidden;
   }
 
-  &:hover .overlay,
-  &__overlay:focus .overlay {
+  &__item:hover .projects__overlay,
+  &__link:focus .projects__overlay {
     transform: translateY(-100%);
   }
 
-  &__overlay:focus {
+  &__link:focus {
     outline: none;
     border: none;
   }
-}
 
-/* .card:not(:nth-last-child(-n + 3)) {
-  margin-bottom: 30px;
-}
+  &__overlay {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    background-color: $accentColor;
+    opacity: 0.9;
+    transform: translateY(0);
+    @include transition (transform, opacity, background-color);
+  }
 
-.card:not(:nth-last-child(3n + 1)) {
-  margin-right: 30px;
-} */
-
-.overlay {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-  align-items: center;
-  justify-content: center;
-  background-color: $accentColor;
-  opacity: 0.9;
-  transform: translateY(0);
-  @include transition (transform, opacity, background-color);
-  
-  &-text {
+  &__text {
     display: flex;
     width: 100%;
     height: 100%;
@@ -81,27 +74,35 @@
     letter-spacing: 0.03em;
     color: $whiteColor;
   }
+
+  &__box {
+    display: block;
+    padding: 20px 24px;
+  }
+
+  &__title {
+    color: $black-text;
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 4px;
+    margin: 0px;
+  }
+
+  &__description {
+    color: $grey-text;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.03em;
+  }
 }
 
-.meta__container {
-  display: block;
-  padding: 20px 24px;
+/* .card:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
 }
 
-.meta__project {
-  color: $black-text;
-  font-size: 18px;
-  font-weight: 700;
-  padding-bottom: 4px;
-  margin: 0px;
-}
-
-.meta__description {
-  color: $grey-text;
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 30px;
-  letter-spacing: 0.03em;
-}
+.card:not(:nth-last-child(3n + 1)) {
+  margin-right: 30px;
+} */
