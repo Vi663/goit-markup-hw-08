@@ -1,16 +1,17 @@
 .mobile-menu {
   display: none;
 
-  position: absolute;
+  position: sticky;
+  z-index: 1;
   top: 63px;
-  left: -100%;
+  right: 100%;
   width: 100%;
   height: 796px;
 
   align-items: center;
   justify-content: center;
   background-color: $whiteColor;
-  // pointer-events: none;
+  // background-color: yellowgreen;
 
   @include transition (transform);
   @media screen and (min-width: 480px) {
@@ -43,11 +44,38 @@
     border: none;
     margin: 0;
     padding: 0;
+    fill: currentColor;
 
     @media screen and (min-width:768px) {
       display: none;
     }
+
+    & :hover, 
+    &:focus {
+      color: $accentColor;
+      fill: $accentColor;
+    }
   }
+
+  // &__button-second {
+  //   pointer-events: none;
+  //   position: absolute;
+  //   top: 10px;
+  //   left: 4px;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   align-content: center;
+  //   background-size: contain;
+  //   background: transparent;
+  //   border: none;
+  //   margin: 0;
+  //   padding: 0;
+
+  //   @media screen and (min-width:768px) {
+  //     display: none;
+  //   }
+  // }
 
   &__button &__button-close {
     display: none;
