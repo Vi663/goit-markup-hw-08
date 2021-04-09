@@ -1,4 +1,34 @@
 .mobile-menu {
+  display: none;
+
+  position: absolute;
+  top: 63px;
+  left: -100%;
+  width: 100%;
+  height: 796px;
+
+  align-items: center;
+  justify-content: center;
+  background-color: $whiteColor;
+  // pointer-events: none;
+
+  @include transition (transform);
+  @media screen and (min-width: 480px) {
+    display: none;
+  }
+
+  &.is-open {
+    transform: translateX(100%);
+    display: block;
+    position: absolute;
+
+    @include transition (transform, opacity, background-color);
+  }
+
+  &.is-open .header__logo,
+  &.is-open .header__logo-accent {
+    display: none;
+  }
 
   &__button {
     position: absolute;
@@ -23,15 +53,120 @@
     display: none;
   }
 
-  &__button--is-open &__button-menu {
+  &__button.is-open &__button-menu {
     display: none;
   }
 
-  &__button--is-open &__button-close {
+  &__button.is-open &__button-close {
     display: block;
     
     @media screen and (min-width:768px) {
       display: none;
     }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 302px;
+  }
+
+  &__item {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 47px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: $black-text;
+    padding-left: 40px;
+    text-align: start;
+    @include transition (color);
+  }
+
+  &__item:first-child {
+    padding-top: 48px;
+  }
+
+  &__item:not(:first-child) {
+    padding-top: 32px;
+  }
+
+  &__item :hover,
+  &__item:focus {
+    color: $accentColor;
+  }
+
+  &__item--current {
+    color: $accentColor;
+  }
+
+  &__list-contacts {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 64px;
+  }
+
+  &__item-contacts {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.02em;
+    color: $grey-text;
+    padding-left: 40px;
+
+    @include transition (color);
+  }
+
+  &__item-contacts:not(:first-child) {
+    padding-top: 32px;
+  }
+
+  &__link-contacts:hover,
+  &__link-contacts:focus {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: 0.02em;
+    color: $accentColor;
+  }
+
+  &__list-social {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item-social:first-child {
+    padding-left: 40px;
+  }
+
+  &__item-social {
+    position: relative;
+  }
+
+  &__item-social:not(:last-child) {
+    padding-right: 20px;
+  }
+
+  &__item-social::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    width: 22px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    transform: rotate(90deg);
+  }
+
+  &__link-social {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    color: $accentColor;
   }
 }

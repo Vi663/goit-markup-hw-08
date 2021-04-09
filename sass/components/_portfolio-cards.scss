@@ -1,22 +1,36 @@
 .projects {
-  margin: -15px;
-  width: 1200px;
+  max-width: 1200px;
 
   &__list {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    flex-direction: row;
     align-items: center;
     padding-inline-start: 0px;
-    margin: 0px;
+
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      margin: -15px;
+    }
+
+    @media screen and (max-width: 1199px) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      padding-top: 40px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      padding-top: 50px;
+      margin: -15px;
+    }
   }
 
   &__item {
     list-style: none;
     background-color: $whiteColor;
     border: 1px solid #EEEEEE;
-    margin: 15px;
     width: 370px;
     max-height: 404px;
     max-width: 370px;
@@ -27,6 +41,23 @@
       box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
       cursor: pointer;
       outline: none;
+    }
+
+    @media screen and (max-width: 767px) {
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
+      width: calc((100% - 2 * 15px) / 1);
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      margin: 15px;
+      width: calc((100% - 4 * 15px) / 2);
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin: 15px;
+      width: calc((100% - 6 * 15px) / 3);
     }
   }
 

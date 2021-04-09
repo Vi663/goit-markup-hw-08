@@ -322,6 +322,7 @@ Correct the inability to style clickable types in iOS and Safari.
 }
 
 .header {
+  position: relative;
   font-family: 'Roboto', sans-serif;
   padding: 24px 0px 25px;
   border-bottom: 1px solid #ECECEC;
@@ -361,6 +362,56 @@ Correct the inability to style clickable types in iOS and Safari.
           align-items: center;
 }
 
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 63px;
+  left: -100%;
+  width: 100%;
+  height: 796px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #ffffff;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 480px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+.mobile-menu.is-open {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  display: block;
+  position: absolute;
+  -webkit-transition-property: opacity, background-color, -webkit-transform;
+  transition-property: opacity, background-color, -webkit-transform;
+  transition-property: transform, opacity, background-color;
+  transition-property: transform, opacity, background-color, -webkit-transform;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.is-open .header__logo,
+.mobile-menu.is-open .header__logo-accent {
+  display: none;
+}
+
 .mobile-menu__button {
   position: absolute;
   top: 10px;
@@ -393,18 +444,136 @@ Correct the inability to style clickable types in iOS and Safari.
   display: none;
 }
 
-.mobile-menu__button--is-open .mobile-menu__button-menu {
+.mobile-menu__button.is-open .mobile-menu__button-menu {
   display: none;
 }
 
-.mobile-menu__button--is-open .mobile-menu__button-close {
+.mobile-menu__button.is-open .mobile-menu__button-close {
   display: block;
 }
 
 @media screen and (min-width: 768px) {
-  .mobile-menu__button--is-open .mobile-menu__button-close {
+  .mobile-menu__button.is-open .mobile-menu__button-close {
     display: none;
   }
+}
+
+.mobile-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 302px;
+}
+
+.mobile-menu__item {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 47px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #212121;
+  padding-left: 40px;
+  text-align: start;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu__item:first-child {
+  padding-top: 48px;
+}
+
+.mobile-menu__item:not(:first-child) {
+  padding-top: 32px;
+}
+
+.mobile-menu__item :hover, .mobile-menu__item:focus {
+  color: #2196F3;
+}
+
+.mobile-menu__item--current {
+  color: #2196F3;
+}
+
+.mobile-menu__list-contacts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 64px;
+}
+
+.mobile-menu__item-contacts {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  color: #757575;
+  padding-left: 40px;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu__item-contacts:not(:first-child) {
+  padding-top: 32px;
+}
+
+.mobile-menu__link-contacts:hover, .mobile-menu__link-contacts:focus {
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  color: #2196F3;
+}
+
+.mobile-menu__list-social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-menu__item-social:first-child {
+  padding-left: 40px;
+}
+
+.mobile-menu__item-social {
+  position: relative;
+}
+
+.mobile-menu__item-social:not(:last-child) {
+  padding-right: 20px;
+}
+
+.mobile-menu__item-social::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  width: 22px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.mobile-menu__link-social {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  color: #2196F3;
 }
 
 .header__nav {
@@ -799,7 +968,7 @@ Correct the inability to style clickable types in iOS and Safari.
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) {
   .features__item {
     width: calc((100% - 4 * 15px) / 2);
     margin: 15px;
@@ -1373,35 +1542,77 @@ Correct the inability to style clickable types in iOS and Safari.
 }
 
 .portfolio__wrapper {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 1200px;
-  padding-top: 94px;
-  padding-bottom: 94px;
+  max-width: 1200px;
+}
+
+@media screen and (min-width: 1200px) {
+  .portfolio__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .portfolio__wrapper {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 
 .filters__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-padding-start: 0px;
           padding-inline-start: 0px;
-  margin-left: auto;
-  margin-right: auto;
-  margin: 0px;
-  padding-bottom: 50px;
+  margin: 0;
+}
+
+@media screen and (min-width: 479px) and (max-width: 767px) {
+  .filters__list {
+    width: 371px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .filters__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 1199px) {
+  .filters__list {
+    margin-top: -7px;
+    margin-bottom: -7px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .filters__list {
+    width: 1200px;
+  }
 }
 
 .filters__item {
@@ -1420,8 +1631,16 @@ Correct the inability to style clickable types in iOS and Safari.
   padding: 0px;
 }
 
-.filters__item:not(:last-child) {
-  margin-right: 8px;
+@media screen and (min-width: 1200px) {
+  .filters__item:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .filters__item {
+    margin: 7px 4px;
+  }
 }
 
 .filters__button {
@@ -1470,36 +1689,61 @@ Correct the inability to style clickable types in iOS and Safari.
 }
 
 .projects {
-  margin: -15px;
-  width: 1200px;
+  max-width: 1200px;
 }
 
 .projects__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-padding-start: 0px;
           padding-inline-start: 0px;
-  margin: 0px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .projects__list {
+    margin: -15px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .projects__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-top: 40px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .projects__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding-top: 50px;
+    margin: -15px;
+  }
 }
 
 .projects__item {
   list-style: none;
   background-color: #ffffff;
   border: 1px solid #EEEEEE;
-  margin: 15px;
   width: 370px;
   max-height: 404px;
   max-width: 370px;
@@ -1512,6 +1756,29 @@ Correct the inability to style clickable types in iOS and Safari.
           box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
   cursor: pointer;
   outline: none;
+}
+
+@media screen and (max-width: 767px) {
+  .projects__item {
+    width: calc((100% - 2 * 15px) / 1);
+  }
+  .projects__item:not(:first-child) {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .projects__item {
+    margin: 15px;
+    width: calc((100% - 4 * 15px) / 2);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .projects__item {
+    margin: 15px;
+    width: calc((100% - 6 * 15px) / 3);
+  }
 }
 
 .projects__link {

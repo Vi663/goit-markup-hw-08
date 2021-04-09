@@ -1,22 +1,46 @@
 .portfolio__wrapper {
-  flex-wrap: wrap;
-  width: 1200px;
-  padding-top: 94px;
-  padding-bottom: 94px;
+  max-width: 1200px;
   @extend %wrapper-center;
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+
+  @media screen and (max-width: 1199px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 
 .filters__list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
   padding-inline-start: 0px;
-  margin-left: auto;
-  margin-right: auto;
-  margin: 0px;
-  padding-bottom: 50px;
+  margin: 0;
+
+  @media screen and (min-width: 479px) and (max-width: 767px) {
+    width: 371px;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 480px) and (max-width: 1199px) {
+    margin-top: -7px;
+    margin-bottom: -7px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+  }
 }
 
 .filters__item {
@@ -28,9 +52,14 @@
   margin: 0px;
   padding: 0px;
   
-  
-  &:not(:last-child) {
-    margin-right: 8px;
+  @media screen and (min-width: 1200px) {
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    margin: 7px 4px;
   }
 }
 
