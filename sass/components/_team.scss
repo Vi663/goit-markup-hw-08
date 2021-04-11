@@ -1,6 +1,5 @@
 .team {
-  margin: 0px;
-  
+  @extend %wrapper-center;
   background-color: $button-bg-non-active;
   
 
@@ -18,7 +17,8 @@
     display: block;
     flex-wrap: wrap;
     justify-content: center;
-    
+    max-width: 1200px;
+    @extend %wrapper-center;
   }
 
   &__list {
@@ -29,7 +29,7 @@
     justify-content: center;
     margin: 0px;
     padding: 0px;
-    @extend %wrapper-center;
+    
 
     @media screen and (max-width: 479px) {
       justify-content: center;
@@ -51,6 +51,7 @@
     background: $whiteColor;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
+    max-width: 450px;
 
     @media screen and (max-width: 767px) {
       width: calc((100% - 2 * 15px) / 1);

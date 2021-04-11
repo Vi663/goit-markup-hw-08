@@ -1,6 +1,6 @@
 .partners {
-  margin: 0px;
   @extend %wrapper-center;
+  max-width: 1200px;
 
   @media screen and (min-width: 1200px) {
     padding-bottom: 94px;
