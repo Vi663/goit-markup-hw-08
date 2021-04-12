@@ -680,21 +680,19 @@ Correct the inability to style clickable types in iOS and Safari.
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.02em;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  justify-items: center;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .contacts__list {
     display: none;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1200px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .contacts__list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1460,7 +1458,6 @@ Correct the inability to style clickable types in iOS and Safari.
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 24px;
   -webkit-transition-property: border, color;
   transition-property: border, color;
   -webkit-transition-duration: 250ms;
@@ -1521,6 +1518,7 @@ Correct the inability to style clickable types in iOS and Safari.
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  padding: 24px;
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 250ms;
@@ -1531,8 +1529,8 @@ Correct the inability to style clickable types in iOS and Safari.
 
 .partners__link:focus {
   outline: 0;
-  border-radius: 4px;
   color: #2196F3;
+  fill: #2196F3;
   border: 1px solid currentColor;
 }
 
@@ -1548,10 +1546,6 @@ Correct the inability to style clickable types in iOS and Safari.
       align-content: center;
 }
 
-.portfolio__wrapper {
-  max-width: 1200px;
-}
-
 @media screen and (min-width: 1200px) {
   .portfolio__wrapper {
     display: -webkit-box;
@@ -1561,6 +1555,7 @@ Correct the inability to style clickable types in iOS and Safari.
         flex-wrap: wrap;
     padding-top: 94px;
     padding-bottom: 94px;
+    max-width: 1200px;
   }
 }
 
@@ -1568,6 +1563,7 @@ Correct the inability to style clickable types in iOS and Safari.
   .portfolio__wrapper {
     padding-top: 60px;
     padding-bottom: 60px;
+    max-width: 768px;
   }
 }
 
@@ -1586,33 +1582,27 @@ Correct the inability to style clickable types in iOS and Safari.
   margin: 0;
 }
 
-@media screen and (min-width: 479px) and (max-width: 767px) {
-  .filters__list {
-    width: 371px;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .filters__list {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    justify-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
 @media screen and (min-width: 480px) and (max-width: 1199px) {
   .filters__list {
-    margin-top: -7px;
-    margin-bottom: -7px;
+    margin: -7px -4px;
   }
 }
 
@@ -1628,14 +1618,20 @@ Correct the inability to style clickable types in iOS and Safari.
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   list-style: none;
   margin: 0px;
   padding: 0px;
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .filters__item {
+    width: calc((100% - 6 * 4px) / 3);
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -1713,6 +1709,9 @@ Correct the inability to style clickable types in iOS and Safari.
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .projects__list {
     margin: -15px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
   }
 }
 
