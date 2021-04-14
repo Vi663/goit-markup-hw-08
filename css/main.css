@@ -71,7 +71,7 @@ img {
   color: #ffffff;
 }
 
-.features__container, .expertise, .team, .team__container, .partners, .portfolio__wrapper {
+.features__container, .expertise, .team__container, .partners, .portfolio__wrapper {
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
@@ -724,13 +724,10 @@ Correct the inability to style clickable types in iOS and Safari.
           align-items: center;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1200px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .contacts__item {
     margin-left: 0px;
   }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1200px) {
   .contacts__item:first-child {
     margin-bottom: 10px;
   }
@@ -1868,6 +1865,10 @@ Correct the inability to style clickable types in iOS and Safari.
   font-size: 16px;
   line-height: 30px;
   letter-spacing: 0.03em;
+}
+
+.projects__picture {
+  background-size: contain;
 }
 
 /* .card:not(:nth-last-child(-n + 3)) {

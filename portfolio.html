@@ -256,7 +256,20 @@
               <!--card8-->
               <li class="projects__item">
                 <a class="projects__link" href="#">
-                  <img class="projects__picture" src="./images/img8.jpg" alt="Проект LAB" width="370" height="294" />
+                  <img 
+                    srcset="
+                        ./images/img8.jpg 370w,
+                        ./images/img8x2.jpg 740w
+                      "
+                    class="projects__picture" 
+                    src="./images/img8.jpg" 
+                    alt="Проект LAB"
+                    sizes="
+                    (min-width: 1200px) 33vw,
+                    (min-width: 768px) 50vw,
+                    100vw
+                    "
+                  />
                   <div class="projects__overlay">
                     <p class="projects__text">Технокряк это современная площадка распространения коронавируса. Компании используют эту
                       платформу для цифрового
@@ -274,7 +287,17 @@
               <!--card9-->
               <li class="projects__item">
                 <a class="projects__link" href="#">
-                  <img class="projects__picture" src="./images/img9.jpg" alt="Growing Business" width="370" height="294" />
+                  <img
+                    srcset="
+                      ./images/img9.jpg 1x,
+                      ./images/img9x2.jpg 2x
+                    "
+                    class="projects__picture" 
+                    src="./images/img9.jpg" 
+                    alt="Growing Business" 
+                    width="370" 
+                    height="294"
+                  />
                   <div class="projects__overlay">
                     <p class="projects__text">Технокряк это современная площадка распространения коронавируса. Компании используют эту
                       платформу для цифрового
