@@ -59,27 +59,20 @@
   }
 
   // &__button-second {
-  //   pointer-events: none;
   //   position: absolute;
   //   top: 10px;
   //   left: 4px;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   align-content: center;
-  //   background-size: contain;
-  //   background: transparent;
-  //   border: none;
-  //   margin: 0;
-  //   padding: 0;
-
-  //   @media screen and (min-width:768px) {
-  //     display: none;
-  //   }
   // }
 
   &__button &__button-close {
     display: none;
+  }
+
+  &__button.is-open &__button-svg {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 2;
   }
 
   &__button.is-open &__button-menu {
@@ -88,10 +81,6 @@
 
   &__button.is-open &__button-close {
     display: block;
-    
-    @media screen and (min-width:768px) {
-      display: none;
-    }
   }
 
   &__list {

@@ -453,18 +453,19 @@ Correct the inability to style clickable types in iOS and Safari.
   display: none;
 }
 
+.mobile-menu__button.is-open .mobile-menu__button-svg {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 2;
+}
+
 .mobile-menu__button.is-open .mobile-menu__button-menu {
   display: none;
 }
 
 .mobile-menu__button.is-open .mobile-menu__button-close {
   display: block;
-}
-
-@media screen and (min-width: 768px) {
-  .mobile-menu__button.is-open .mobile-menu__button-close {
-    display: none;
-  }
 }
 
 .mobile-menu__list {
