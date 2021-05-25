@@ -831,6 +831,12 @@ Correct the inability to style clickable types in iOS and Safari.
   margin-right: auto;
 }
 
+@media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  .hero {
+    background-image: url(../images/herox2.jpg);
+  }
+}
+
 .hero__container {
   display: -webkit-box;
   display: -ms-flexbox;
