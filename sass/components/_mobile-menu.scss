@@ -87,7 +87,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    padding-bottom: 302px;
+    padding-bottom: 182px;
   }
 
   &__item {
@@ -134,7 +134,7 @@
     color: $grey-text;
     padding-left: 40px;
 
-    @include transition (color);
+    @include transition (color, scale);
   }
 
   &__item-contacts:not(:first-child) {
@@ -156,6 +156,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    padding-bottom: 48px;
   }
 
   &__item-social:first-child {

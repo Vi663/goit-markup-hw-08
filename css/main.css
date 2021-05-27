@@ -472,7 +472,7 @@ Correct the inability to style clickable types in iOS and Safari.
   list-style: none;
   margin: 0;
   padding: 0;
-  padding-bottom: 302px;
+  padding-bottom: 182px;
 }
 
 .mobile-menu__item {
@@ -522,8 +522,8 @@ Correct the inability to style clickable types in iOS and Safari.
   letter-spacing: 0.02em;
   color: #757575;
   padding-left: 40px;
-  -webkit-transition-property: color;
-  transition-property: color;
+  -webkit-transition-property: color, scale;
+  transition-property: color, scale;
   -webkit-transition-duration: 250ms;
           transition-duration: 250ms;
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -553,6 +553,7 @@ Correct the inability to style clickable types in iOS and Safari.
   list-style: none;
   margin: 0;
   padding: 0;
+  padding-bottom: 48px;
 }
 
 .mobile-menu__item-social:first-child {
