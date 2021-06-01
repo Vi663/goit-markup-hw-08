@@ -2661,6 +2661,7 @@ Correct the inability to style clickable types in iOS and Safari.
 @media screen and (max-width: 1199px) {
   .footer-form__button {
     margin-top: 60px;
+    margin-left: -9px;
   }
 }
 
